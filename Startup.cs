@@ -1,3 +1,4 @@
+using Key_Comic_DB_Capstone.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +29,8 @@ namespace Key_Comic_DB_Capstone
         {
 
             services.AddControllers();
+            services.AddTransient<IComicsRepository, ComicsRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Key_Comic_DB_Capstone", Version = "v1" });
