@@ -1,4 +1,5 @@
-﻿using Key_Comic_DB_Capstone.Repositories;
+﻿using Key_Comic_DB_Capstone.Models;
+using Key_Comic_DB_Capstone.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -25,16 +26,23 @@ namespace Key_Comic_DB_Capstone.Controllers
 
         // GET api/<ComicsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult GetById(int id)
         {
-            return "value";
+            var comics = _comicsRepository.GetById(id);
+            if (comics == null)
+            {
+                return NotFound();
+            }
+            return Ok(comics);
         }
 
         // POST api/<ComicsController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+        [HttpPost]
+        public IActionResult Comics(Comics comics)
+        {
+            _comicsRepository.Add(comics);
+            return CreatedAtAction("Get", new { id = comics.Id }, comics);
+        }
 
         // PUT api/<ComicsController>/5
         //[HttpPut("{id}")]
