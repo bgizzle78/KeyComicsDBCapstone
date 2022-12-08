@@ -12,5 +12,6 @@ namespace Key_Comic_DB_Capstone.Models
         public string CoverArtist { get; set; }
         public string StoryWriter { get; set; }
         public string CoverImage { get; set; }
+        public string ComicReleased { get; set; }
     }
 }

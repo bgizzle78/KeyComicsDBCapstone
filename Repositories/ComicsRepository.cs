@@ -20,7 +20,7 @@ namespace Key_Comic_DB_Capstone.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                          SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage
+                          SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
                             FROM Comics"
                     ;
 
@@ -37,6 +37,7 @@ namespace Key_Comic_DB_Capstone.Repositories
                             CoverArtist = DbUtils.GetString(reader, "CoverArtist"),
                             StoryWriter = DbUtils.GetString(reader, "StoryWriter"),
                             CoverImage = DbUtils.GetString(reader, "CoverImage"),
+                            ComicReleased = DbUtils.GetString(reader, "ComicReleased")
                         });
                     }
 

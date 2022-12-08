@@ -7,10 +7,11 @@ namespace Key_Comic_DB_Capstone.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostController : ControllerBase
+
+    public class ComicsController : ControllerBase
     {
         private readonly IComicsRepository _comicsRepository;
-        public PostController(IComicsRepository comicsRepository)
+        public ComicsController (IComicsRepository comicsRepository)
         {
             _comicsRepository = comicsRepository;
         }
