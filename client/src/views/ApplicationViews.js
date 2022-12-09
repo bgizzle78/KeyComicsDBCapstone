@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import ComicsDelete from "../components/ComicsDelete";
 import ComicsForm from "../components/ComicsForm";
 import ComicsList from '../components/ComicsList';
 
@@ -9,6 +10,7 @@ const ApplicationViews = () => {
         <Routes>
             <Route path="/" element={<ComicsList />} />
             <Route path="/createComic" element={<ComicsForm />} />
+            <Route path="/deleteComic" element={<ComicsDelete />} />
         </Routes>
     )
 };

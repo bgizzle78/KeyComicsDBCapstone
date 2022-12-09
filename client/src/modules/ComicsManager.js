@@ -1,4 +1,3 @@
-import React from 'react';
 
 const baseUrl = 'https://localhost:5001/api';
 
@@ -21,3 +20,9 @@ export const addComics = (newComic) => {
       body: JSON.stringify(newComic),
     })
 };
+
+export const deleteComics = (id) => {
+    return fetch(`${baseUrl}/deleteComic/${id}`, {
+      method: "DELETE"
+    })
+  };

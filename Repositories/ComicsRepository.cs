@@ -111,7 +111,25 @@ namespace Key_Comic_DB_Capstone.Repositories
                         comics.Id = (int)cmd.ExecuteScalar();
                     };
                 }
-            } 
+            }
+        public void Delete(int id)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                            DELETE FROM Comics
+                            WHERE Id = @id";
+
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                };
+            }
         }
     }
+}
 
