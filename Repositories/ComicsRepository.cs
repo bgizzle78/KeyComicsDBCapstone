@@ -97,9 +97,9 @@ namespace Key_Comic_DB_Capstone.Repositories
                     using (var cmd = conn.CreateCommand())
                     {
                         cmd.CommandText = @"
-                        INSERT INTO Comic (Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased)
+                        INSERT INTO Comics (Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased)
                         OUTPUT INSERTED.ID
-                        VALUES (@title, @issueNumber, @coverArtist, @storyWriter, @coverArtist, @comicReleased)";
+                        VALUES (@title, @issueNumber, @coverArtist, @storyWriter, @coverImage, @comicReleased)";
 
                         cmd.Parameters.AddWithValue("@title", comics.Title);
                         cmd.Parameters.AddWithValue("@issueNumber", comics.IssueNumber);
