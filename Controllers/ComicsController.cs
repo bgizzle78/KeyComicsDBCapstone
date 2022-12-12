@@ -44,6 +44,7 @@ namespace Key_Comic_DB_Capstone.Controllers
             return CreatedAtAction("Get", new { id = comics.Id }, comics);
         }
 
+        //DELETE api/<ComicsController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -52,9 +53,11 @@ namespace Key_Comic_DB_Capstone.Controllers
         }
 
         // PUT api/<ComicsController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Comics comics)
+        {
+            _comicsRepository.Update(comics);
+            return Ok(comics);
+        }
     }
 }

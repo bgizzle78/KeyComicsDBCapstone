@@ -9,7 +9,7 @@ export const ComicsForm = () => {
         initial state object
     */
     const [comic, update] = useState({
-        UserProfileId: "",
+        // UserProfileId: "",
         Title: "",
         IssueNumber: "",
         CoverArtist: "",
@@ -26,16 +26,16 @@ export const ComicsForm = () => {
 
     const navigate = useNavigate()
 
-    const localUser = localStorage.getItem("userProfile")
-    const userObject = JSON.parse(localUser)
+    // const localUser = localStorage.getItem("userProfile")
+    // const userObject = JSON.parse(localUser)
 
-    
+
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
-        
+
         // TODO: Create the object to be saved to the API
         const newComic = {
-            UserProfileId: userObject.id,
+            // UserProfileId: userObject.id,
             Title: comic.Title,
             IssueNumber: comic.IssueNumber,
             CoverArtist: comic.CoverArtist,
@@ -51,7 +51,10 @@ export const ComicsForm = () => {
             })
     }
 
-    
+    const Cancel = () => {
+        navigate('/')
+    }
+
     return (
         <form className="comicForm">
             <h1 className="comicForm__Title">Add New Comic Form</h1>
@@ -65,7 +68,7 @@ export const ComicsForm = () => {
                         placeholder="Comic title"
                         value={comic.Title}
                         onChange={(changeEvent) => {
-                            const copy = {...comic}
+                            const copy = { ...comic }
                             copy.Title = changeEvent.target.value
                             update(copy)
                         }} />
@@ -81,7 +84,7 @@ export const ComicsForm = () => {
                         placeholder="Issue #"
                         value={comic.IssueNumber}
                         onChange={(changeEvent) => {
-                            const copy = {...comic}
+                            const copy = { ...comic }
                             copy.IssueNumber = changeEvent.target.value
                             update(copy)
                         }} />
@@ -97,14 +100,14 @@ export const ComicsForm = () => {
                         placeholder="Cover Artist"
                         value={comic.CoverArtist}
                         onChange={(changeEvent) => {
-                            const copy = {...comic}
+                            const copy = { ...comic }
                             copy.CoverArtist = changeEvent.target.value
                             update(copy)
                         }} />
                 </div>
-            </fieldset>   
+            </fieldset>
             <fieldset>
-            <div className="form-group">
+                <div className="form-group">
                     <label htmlFor="Story Writer">Story Writer:</label>
                     <input
                         autoFocus
@@ -113,24 +116,24 @@ export const ComicsForm = () => {
                         placeholder="Story Writer"
                         value={comic.StoryWriter}
                         onChange={(changeEvent) => {
-                            const copy = {...comic}
+                            const copy = { ...comic }
                             copy.StoryWriter = changeEvent.target.value
                             update(copy)
                         }} />
-                </div>         
+                </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="Comic Released">Comic Released:</label>
-                    <input className="form-control" 
-                            type="date"
-                            value={comic.ComicReleased} 
-                            onChange={(changeEvent) => {
-                                const copy = {...comic}
-                                copy.ComicReleased = changeEvent.target.value
-                                update(copy)
-                            }}/>
-                </div>         
+                    <input className="form-control"
+                        type="date"
+                        value={comic.ComicReleased}
+                        onChange={(changeEvent) => {
+                            const copy = { ...comic }
+                            copy.ComicReleased = changeEvent.target.value
+                            update(copy)
+                        }} />
+                </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
@@ -142,15 +145,18 @@ export const ComicsForm = () => {
                         placeholder="Cover Image URL"
                         value={comic.CoverImage}
                         onChange={(changeEvent) => {
-                            const copy = {...comic}
+                            const copy = { ...comic }
                             copy.CoverImage = changeEvent.target.value
                             update(copy)
                         }} />
                 </div>
-            </fieldset> 
-            <button onClick={(clickEvent) => {handleSaveButtonClick(clickEvent)}} className="btn btn-primary">
+            </fieldset>
+            <button onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }} className="btn btn-primary">
                 Save New Comic
             </button>
+            <button onClick={(e) => {
+                Cancel()
+            }}>Cancel</button>
         </form>
     )
 }

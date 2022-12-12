@@ -26,3 +26,13 @@ export const deleteComics = (id) => {
       method: "DELETE"
     })
   };
+
+  export const editComics = (comics) => {
+    return fetch(`${baseUrl}/Comics/${comics.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(comics),
+      }).then((res) => res.json())
+};
