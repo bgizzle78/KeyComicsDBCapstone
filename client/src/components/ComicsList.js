@@ -17,7 +17,11 @@ const ComicList = () => {
     }, []);
 
     const handleDeleteClick = (id) => {
-        getById(id).then((c) => { navigate(`/deleteComic/${id}`) })
+        getById(id).then((e) => { navigate(`/deleteComic/${id}`) })
+    }
+
+    const handleEditClick = (id) => {
+        getById(id).then((e) => { navigate(`/editComic/${id}`) })
     }
 
     return (
@@ -35,6 +39,9 @@ const ComicList = () => {
                             <button onClick={(e) => {
                                 handleDeleteClick(comics.id)
                             }} style={{ width: '60px', height: '30px', margin: '5px' }}>Delete</button>
+                            <button onClick={(e) => {
+                                handleEditClick(comics.id)
+                            }} style={{ width: '60px', height: '30px', margin: '5px' }}>Edit</button>
                         </div>
                     ))}
                 </div>

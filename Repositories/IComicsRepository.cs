@@ -10,6 +10,6 @@ namespace Key_Comic_DB_Capstone.Repositories
         Comics GetById(int id);
         void Add(Comics comics);
         void Delete(int id);
-        //void Update(Comics comics);
+        void Update(Comics comics);
     }
 }

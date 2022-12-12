@@ -6,7 +6,6 @@ using Key_Comic_DB_Capstone.Models;
 using Key_Comic_DB_Capstone.Utils;
 using System.Data;
 using System.Data.SqlClient;
-using System.Reflection.PortableExecutable;
 
 namespace Key_Comic_DB_Capstone.Repositories
 {
@@ -128,6 +127,37 @@ namespace Key_Comic_DB_Capstone.Repositories
 
                     cmd.ExecuteNonQuery();
                 };
+            }
+        }
+        public void Update(Comics comics)
+        {
+            using (SqlConnection conn = Connection)
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                            UPDATE Comics
+                            SET Title = @title,
+                                IssueNumber = @issueNumber,
+                                CoverArtist = @coverArtist,
+                                StoryWriter = @storyWriter,
+                                CoverImage = @coverImage,
+                                ComicReleased = @comicReleased                            
+                            WHERE Id = @id";
+
+                    cmd.Parameters.AddWithValue("@id", comics.Id);
+                    cmd.Parameters.AddWithValue("@title", comics.Title);
+                    cmd.Parameters.AddWithValue("@issueNumber", comics.IssueNumber);
+                    cmd.Parameters.AddWithValue("@coverArtist", comics.CoverArtist);
+                    cmd.Parameters.AddWithValue("@storyWriter", comics.StoryWriter);
+                    cmd.Parameters.AddWithValue("@coverImage", comics.CoverImage);
+                    cmd.Parameters.AddWithValue("@comicReleased", comics.ComicReleased);
+
+
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
     }
