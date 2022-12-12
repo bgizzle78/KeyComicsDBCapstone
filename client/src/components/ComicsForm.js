@@ -9,6 +9,7 @@ export const ComicsForm = () => {
         initial state object
     */
     const [comic, update] = useState({
+        UserProfileId: "",
         Title: "",
         IssueNumber: "",
         CoverArtist: "",
@@ -25,8 +26,8 @@ export const ComicsForm = () => {
 
     const navigate = useNavigate()
 
-    // const localUser = localStorage.getItem("userProfile")
-    // const userObject = JSON.parse(localUser)
+    const localUser = localStorage.getItem("userProfile")
+    const userObject = JSON.parse(localUser)
 
     
     const handleSaveButtonClick = (event) => {
@@ -34,6 +35,7 @@ export const ComicsForm = () => {
         
         // TODO: Create the object to be saved to the API
         const newComic = {
+            UserProfileId: userObject.id,
             Title: comic.Title,
             IssueNumber: comic.IssueNumber,
             CoverArtist: comic.CoverArtist,

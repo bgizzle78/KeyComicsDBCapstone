@@ -10,7 +10,7 @@ const ApplicationViews = () => {
         <Routes>
             <Route path="/" element={<ComicsList />} />
             <Route path="/createComic" element={<ComicsForm />} />
-            <Route path="/deleteComic" element={<ComicsDelete />} />
+            <Route path="/deleteComic/:id" element={<ComicsDelete />} />
         </Routes>
     )
 };

@@ -22,7 +22,7 @@ export const addComics = (newComic) => {
 };
 
 export const deleteComics = (id) => {
-    return fetch(`${baseUrl}/deleteComic/${id}`, {
+    return fetch(`${baseUrl}/Comics/${id}`, {
       method: "DELETE"
     })
   };
