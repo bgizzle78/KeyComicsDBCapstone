@@ -34,11 +34,11 @@ const ComicsEdit = () => {
         }
         console.log(updateComic)
         editComics(updateComic).then((e) => {
-            navigate('/')
+            navigate('/comics')
         })
     }
     const Cancel = () => {
-        navigate('/')
+        navigate('/comics')
     }
 
     return (

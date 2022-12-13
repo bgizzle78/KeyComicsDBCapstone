@@ -47,12 +47,12 @@ export const ComicsForm = () => {
         addComics(newComic)
             .then(r => r.json())
             .then(p => {
-                navigate(`/`)
+                navigate(`/comics`)
             })
     }
 
     const Cancel = () => {
-        navigate('/')
+        navigate('/comics')
     }
 
     return (

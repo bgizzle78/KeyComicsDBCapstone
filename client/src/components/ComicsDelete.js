@@ -24,11 +24,11 @@ const ComicsDelete = () => {
 
     const Delete = () => {
         deleteComics(chosenComic.id).then((c) => {
-            navigate(`/`)
+            navigate(`/comics`)
         })
     }
     const Cancel = () => {
-        navigate('/')
+        navigate('/comics')
     }
 
     return (
