@@ -29,6 +29,9 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 <NavItem>
                   <NavLink tag={RRNavLink} to="/users">User Profile</NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink tag={RRNavLink} to="/searchList">Search Comics</NavLink>
+                </NavItem>
               </>
             }
           </Nav>
@@ -51,6 +54,9 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 </NavItem>
                 <NavItem>
                   <NavLink tag={RRNavLink} to="/register">Register</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={RRNavLink} to="/searchList">Search Comics</NavLink>
                 </NavItem>
               </>
             }

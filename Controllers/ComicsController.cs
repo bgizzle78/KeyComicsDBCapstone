@@ -59,5 +59,12 @@ namespace Key_Comic_DB_Capstone.Controllers
             _comicsRepository.Update(comics);
             return Ok(comics);
         }
+
+        //GET api/<ComicsController>
+        [HttpGet("search")]
+        public IActionResult Search(string q, bool sortDesc)
+        {
+            return Ok(_comicsRepository.Search(q, sortDesc));
+        }
     }
 }
