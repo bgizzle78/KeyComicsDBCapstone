@@ -49,9 +49,9 @@ namespace Key_Comic_DB_Capstone.Repositories
                 {
                     cmd.CommandText = @"INSERT INTO [User] (Email)
                                         OUTPUT INSERTED.ID
-                                        VALUES @Email";
+                                        VALUES (@email)";
 
-                    DbUtils.AddParameter(cmd, "@Email", userProfile.Email);
+                    DbUtils.AddParameter(cmd, "@email", userProfile.Email);
 
                     userProfile.Id = (int)cmd.ExecuteScalar();
                 }

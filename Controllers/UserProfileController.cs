@@ -45,5 +45,14 @@ namespace Key_Comic_DB_Capstone.Controllers
             }
             return Ok(user);
         }
+        [HttpPost]
+        public IActionResult Add(UserProfile userProfile)
+        {
+            _userRepository.Add(userProfile);
+            return CreatedAtAction(
+                "GetByEmail",
+                new { email = userProfile.Email },
+                userProfile);
+        }
     }
 }

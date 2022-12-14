@@ -47,7 +47,6 @@ namespace Key_Comic_DB_Capstone.Repositories
 
                     return comics;
                 }
-
             }
         }
         public Comics GetById(int id)

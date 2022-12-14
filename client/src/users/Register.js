@@ -21,7 +21,7 @@ export default function Register({setIsLoggedIn}) {
       register(userProfile, password)
         .then(() => {
           setIsLoggedIn(true)
-          navigate('/users')
+          navigate('/comics')
         });
     }
  };
