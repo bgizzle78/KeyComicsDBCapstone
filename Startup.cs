@@ -30,6 +30,7 @@ namespace Key_Comic_DB_Capstone
 
             services.AddControllers();
             services.AddTransient<IComicsRepository, ComicsRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
 
             services.AddSwaggerGen(c =>
             {
