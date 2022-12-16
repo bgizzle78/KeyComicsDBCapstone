@@ -24,7 +24,8 @@ namespace Key_Comic_DB_Capstone.Repositories
                 {
                     cmd.CommandText = @"
                           SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
-                            FROM Comics";
+                            FROM Comics
+                            ORDER BY Title";
 
                     var reader = cmd.ExecuteReader();
 
@@ -156,6 +157,43 @@ namespace Key_Comic_DB_Capstone.Repositories
 
 
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public List<Comics> Search(string criterion)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    var sql = @"
+                            SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
+                            FROM Comics
+                            WHERE Title LIKE @Criterion";                    
+
+                    cmd.CommandText = sql;
+                    DbUtils.AddParameter(cmd, "@Criterion", $"%{criterion}%");
+                    var reader = cmd.ExecuteReader();
+
+                    var comics = new List<Comics>();
+                    while (reader.Read())
+                    {
+                        comics.Add(new Comics()
+                        {
+                            Id = DbUtils.GetInt(reader, "Id"),
+                            Title = DbUtils.GetString(reader, "Title"),
+                            IssueNumber = DbUtils.GetInt(reader, "IssueNumber"),
+                            CoverArtist = DbUtils.GetString(reader, "CoverArtist"),
+                            StoryWriter = DbUtils.GetString(reader, "StoryWriter"),
+                            CoverImage = DbUtils.GetString(reader, "CoverImage"),
+                            ComicReleased = DbUtils.GetString(reader, "ComicReleased"),
+                        });
+                    }
+
+                    reader.Close();
+
+                    return comics;
                 }
             }
         }

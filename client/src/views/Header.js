@@ -2,23 +2,18 @@ import React, { useState } from 'react';
 import { NavLink as RRNavLink } from "react-router-dom";
 import { logout } from '../modules/UserProfileManager';
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink
 } from 'reactstrap';
 
 export default function Header({ isLoggedIn, setIsLoggedIn }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+  // const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             { /* When isLoggedIn === true, we will render the Home link */}
             {isLoggedIn &&
@@ -26,8 +21,11 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 <NavItem>
                   <NavLink tag={RRNavLink} to="/comics">Home</NavLink>
                 </NavItem>
-                <NavItem>
+                {/* <NavItem>
                   <NavLink tag={RRNavLink} to="/users">User Profile</NavLink>
+                </NavItem> */}
+                <NavItem>
+                  <NavLink tag={RRNavLink} to="/searchList">Search Comics</NavLink>
                 </NavItem>
               </>
             }
@@ -52,10 +50,12 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 <NavItem>
                   <NavLink tag={RRNavLink} to="/register">Register</NavLink>
                 </NavItem>
+                {/* <NavItem>
+                  <NavLink tag={RRNavLink} to="/searchList">Search Comics</NavLink>
+                </NavItem> */}
               </>
             }
           </Nav>
-        </Collapse>
       </Navbar>
     </div>
   );

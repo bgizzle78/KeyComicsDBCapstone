@@ -25,28 +25,29 @@ const ComicList = () => {
     }
 
     return (
-        <div className="container">
-            <div className="row justify-content-center" style={{ display: 'flex', flexDirection: 'column' }}>
-                <h1 style={{ marginTop: '20px' }}>Key Comics DB </h1>
-                <button onClick={(e) => {
-                    navigate('/createComic')
-                }} style={{ marginTop: '15px', width: '120px' }}
-                >Add New Comic</button>
-                <div className="cards-column">
-                    {comics?.map((comics) => (
-                        <div style={{ display: 'flex' }}>
-                            <Comics key={comics.id} comic={comics} />
-                            <button onClick={(e) => {
-                                handleDeleteClick(comics.id)
-                            }} style={{ width: '60px', height: '30px', margin: '5px' }}>Delete</button>
-                            <button onClick={(e) => {
-                                handleEditClick(comics.id)
-                            }} style={{ width: '60px', height: '30px', margin: '5px' }}>Edit</button>
-                        </div>
-                    ))}
+        <>
+            <div className="container">
+                <div className="row justify-content-center" style={{ display: 'flex', flexDirection: 'column' }}>
+                    <h1 style={{ marginTop: '20px' }}>Comics DB</h1>
+                    <button onClick={(e) => {
+                        navigate('/createComic');
+                    }} style={{ color: 'blue', marginTop: '15px', width: '120px' }}
+                    >Add A New Comic</button>
+                    <div className="cards-column">
+                        {comics?.map((comics) => (
+                            <div style={{ display: 'flex' }}>
+                                <Comics key={comics.id} comic={comics} />
+                                <button onClick={(e) => {
+                                    handleDeleteClick(comics.id);
+                                }} style={{ background: '', width: '55px', height: '20px', margin: '5px' }}>Delete</button>
+                                <button onClick={(e) => {
+                                    handleEditClick(comics.id);
+                                }} style={{ background: '', width: '55px', height: '20px', margin: '5px' }}>Edit</button>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div></>
     );
 };
 

@@ -36,3 +36,9 @@ export const deleteComics = (id) => {
         body: JSON.stringify(comics),
       }).then((res) => res.json())
 };
+
+//http GET by Search `baseUrl/Comics/search?q=<query>`
+export const searchComics = (query)=> { 
+  return fetch(`${baseUrl}/Comics/search?q=${query}`)
+  .then((res)=> res.json())
+};

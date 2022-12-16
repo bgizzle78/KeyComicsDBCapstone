@@ -1,9 +1,9 @@
 import React from "react";
 import { Card, CardImg, CardBody } from "reactstrap";
 
-const Comics = ({ comic }) => {
+const SearchResults = ({ comic }) => {
     return (
-        <Card className="m-4" font="papyrus">
+        <Card className="m-4">
             <CardBody>
                 <p className="text-left px-2">Title: {comic.title}</p>
                 <p className="text-left px-2">Issue: #{comic.issueNumber}</p>
@@ -16,4 +16,4 @@ const Comics = ({ comic }) => {
     );
 };
 
-export default Comics;
+export default SearchResults;

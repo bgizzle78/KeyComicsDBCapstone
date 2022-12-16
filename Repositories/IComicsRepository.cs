@@ -11,5 +11,6 @@ namespace Key_Comic_DB_Capstone.Repositories
         void Add(Comics comics);
         void Delete(int id);
         void Update(Comics comics);
+        List<Comics> Search(string criterion);
     }
 }
