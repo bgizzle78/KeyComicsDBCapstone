@@ -3,7 +3,7 @@ import { Card, CardImg, CardBody } from "reactstrap";
 
 const Comics = ({ comic }) => {
     return (
-        <Card className="m-4" font="papyrus">
+        <Card className="m-4" style={{ font: "", background: "lightgray", color: "", display: 'flex', flexDirection: 'column' }}>
             <CardBody>
                 <p className="text-left px-2">Title: {comic.title}</p>
                 <p className="text-left px-2">Issue: #{comic.issueNumber}</p>

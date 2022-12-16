@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
 import { getAllComics, addComics } from "../modules/ComicsManager";
 
 
@@ -151,12 +152,12 @@ export const ComicsForm = () => {
                         }} />
                 </div>
             </fieldset>
-            <button onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }} className="btn btn-primary">
+            <Button onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }} className="btn btn-primary">
                 Save New Comic
-            </button>
-            <button onClick={(e) => {
+            </Button>
+            <Button onClick={(e) => {
                 Cancel()
-            }}>Cancel</button>
+            }}>Cancel</Button>
         </form>
     )
 }

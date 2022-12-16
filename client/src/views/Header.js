@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink as RRNavLink } from "react-router-dom";
 import { logout } from '../modules/UserProfileManager';
 import {
@@ -9,11 +9,10 @@ import {
 } from 'reactstrap';
 
 export default function Header({ isLoggedIn, setIsLoggedIn }) {
-  // const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <>
+      <Navbar bg="dark" variant="dark">
           <Nav className="mr-auto" navbar>
             { /* When isLoggedIn === true, we will render the Home link */}
             {isLoggedIn &&
@@ -50,13 +49,10 @@ export default function Header({ isLoggedIn, setIsLoggedIn }) {
                 <NavItem>
                   <NavLink tag={RRNavLink} to="/register">Register</NavLink>
                 </NavItem>
-                {/* <NavItem>
-                  <NavLink tag={RRNavLink} to="/searchList">Search Comics</NavLink>
-                </NavItem> */}
               </>
             }
           </Nav>
       </Navbar>
-    </div>
+    </>
   );
 }
