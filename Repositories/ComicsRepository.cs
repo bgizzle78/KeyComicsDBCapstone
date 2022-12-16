@@ -24,7 +24,8 @@ namespace Key_Comic_DB_Capstone.Repositories
                 {
                     cmd.CommandText = @"
                           SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
-                            FROM Comics";
+                            FROM Comics
+                            ORDER BY Title";
 
                     var reader = cmd.ExecuteReader();
 
@@ -159,7 +160,7 @@ namespace Key_Comic_DB_Capstone.Repositories
                 }
             }
         }
-        public List<Comics> Search(string criterion, bool sortDescending)
+        public List<Comics> Search(string criterion)
         {
             using (var conn = Connection)
             {
@@ -169,10 +170,10 @@ namespace Key_Comic_DB_Capstone.Repositories
                     var sql = @"
                             SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
                             FROM Comics
-                            WHERE Title = @title";                    
+                            WHERE Title LIKE @Criterion";                    
 
                     cmd.CommandText = sql;
-                    //DbUtils.AddParameter(cmd, "@Criterion", $"%{criterion}%");
+                    DbUtils.AddParameter(cmd, "@Criterion", $"%{criterion}%");
                     var reader = cmd.ExecuteReader();
 
                     var comics = new List<Comics>();

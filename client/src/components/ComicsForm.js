@@ -57,7 +57,7 @@ export const ComicsForm = () => {
 
     return (
         <form className="comicForm">
-            <h1 className="comicForm__Title">Add New Comic Form</h1>
+            <h1 className="comicForm__Title">Add New Comic</h1>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="Title">Title:</label>
@@ -92,12 +92,12 @@ export const ComicsForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="CoverArtist">Cover Artist:</label>
+                    <label htmlFor="Artist">Artist:</label>
                     <input
                         autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Cover Artist"
+                        placeholder="Artist"
                         value={comic.CoverArtist}
                         onChange={(changeEvent) => {
                             const copy = { ...comic }
@@ -108,12 +108,12 @@ export const ComicsForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="Story Writer">Story Writer:</label>
+                    <label htmlFor="Writer">Writer:</label>
                     <input
                         autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Story Writer"
+                        placeholder="Writer"
                         value={comic.StoryWriter}
                         onChange={(changeEvent) => {
                             const copy = { ...comic }

@@ -25,7 +25,7 @@ export const getCurrentUser = () => {
         localStorage.clear()
   };
 
-  export const register = (userObject, password) => {
+  export const register = (userObject) => {
     return  fetch(`${baseUrl}/UserProfile`, {
       method: "POST",
       headers: {
@@ -39,12 +39,12 @@ export const getCurrentUser = () => {
       });
   };
 
-export const getAllUsers = () => {
-  return fetch (`${baseUrl}/UserProfile`)
-    .then((res) => res.json())
-};
+// export const getAllUsers = () => {
+//   return fetch (`${baseUrl}/UserProfile`)
+//     .then((res) => res.json())
+// };
 
-export const getUserById = (id) => {
-  return fetch(`${baseUrl}/UserProfile/${id}`)
-    .then((res) => res.json());
-};
+// export const getUserById = (id) => {
+//   return fetch(`${baseUrl}/UserProfile/${id}`)
+//     .then((res) => res.json());
+// };

@@ -54,7 +54,7 @@ namespace Key_Comic_DB_Capstone.Controllers
 
         // PUT api/<ComicsController>/5
         [HttpPut("{id}")]
-        public IActionResult Update(int id, Comics comics)
+        public IActionResult Update(Comics comics)
         {
             _comicsRepository.Update(comics);
             return Ok(comics);
@@ -62,9 +62,9 @@ namespace Key_Comic_DB_Capstone.Controllers
 
         //GET api/<ComicsController>
         [HttpGet("search")]
-        public IActionResult Search(string q, bool sortDesc)
+        public IActionResult Search(string q)
         {
-            return Ok(_comicsRepository.Search(q, sortDesc));
+            return Ok(_comicsRepository.Search(q));
         }
     }
 }
