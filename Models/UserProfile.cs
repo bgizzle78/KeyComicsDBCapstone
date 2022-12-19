@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System;
 
 namespace Key_Comic_DB_Capstone.Models
 {

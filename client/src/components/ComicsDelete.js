@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getById, deleteComics } from "../modules/ComicsManager";
+import { Button } from "reactstrap";
 
 const ComicsDelete = () => {
     const [chosenComic, setChosenComic] = useState({});
@@ -33,13 +34,13 @@ const ComicsDelete = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', letterSpacing: '.5px', alignItems: 'center', margin: '45px', height: '30px', width: '500px', justifyContent: 'space-between' }}>
-            <h2 style={{ marginBottom: '45px' }}>Are you sure you want to delete this comic book?</h2>
+            <h2 style={{ color: 'darkblue', marginBottom: '45px' }}>Are you sure you want to delete this comic book?</h2>
             <div style={{ display: 'flex' }}>
-                <h5 style={{ marginRight: '30px' }}>{chosenComic.id}</h5>
-                <button style={{ marginRight: '10px' }} onClick={(c) => {
+                <h3 style={{ marginRight: '30px' }}>{chosenComic.title} #{chosenComic.issueNumber}</h3>
+                <button style={{ color: 'red', background: 'lightcoral' , marginRight: '10px' }} onClick={(c) => {
                     Delete()
                 }}>Delete</button>
-                <button onClick={(c) => {
+                <button style={{color: 'blue' , background: 'lightblue'}} onClick={(c) => {
                     Cancel()
                 }}>Cancel</button>
             </div>

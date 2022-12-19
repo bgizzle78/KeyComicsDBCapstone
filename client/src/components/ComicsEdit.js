@@ -1,8 +1,7 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import { editComics, getById } from "../modules/ComicsManager";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { Button } from "reactstrap";
 
 const ComicsEdit = () => {
     const [chosenComic, setChosenComic] = useState({});
@@ -43,8 +42,8 @@ const ComicsEdit = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', letterSpacing: '.5px', alignItems: 'center', margin: '45px', height: '30px', width: '500px', justifyContent: 'space-between' }}>
-            <h2 style={{ marginBottom: '45px' }}>Edit Comic</h2>
-            <div style={{ display: 'flex' }}>
+            <h2 style={{ color: 'darkblue', marginBottom: '45px' }}>Edit Comic</h2>
+            <div style={{ background: "lightgray", display: 'flex' }}>
                 <fieldset>
                     <input
                         style={{ marginRight: '10px' }}
@@ -113,10 +112,10 @@ const ComicsEdit = () => {
                         }
                     />
                 </fieldset>
-                <button style={{ marginRight: '10px' }} onClick={(e) => {
+                <button style={{ background: 'lightgreen', color:'green', marginRight: '10px' }} onClick={(e) => {
                     Edit()
                 }}>Save</button>
-                <button onClick={(e) => {
+                <button style={{ background: 'yellow', color:'goldenrod' }} onClick={(e) => {
                     Cancel()
                 }}>Cancel</button>
             </div>
