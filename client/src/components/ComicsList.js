@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Comics from './Comics';
 import { getAllComics, getById } from "../modules/ComicsManager";
-import { CardImg, Button } from "reactstrap";
 
 const ComicList = () => {
     const [comics, setComics] = useState([]);
@@ -26,29 +25,32 @@ const ComicList = () => {
     }
 
     return (
-        <>
-            <div className="container" style={{ display: 'flex', flexDirection: 'column' }}>
-                <div className="row justify-content-center" style={{ background: "lightgray", display: 'flex', flexDirection: 'column' }}>
-                    <h1 style={{ marginTop: '20px' }}>Comics DB</h1>
-                    <Button onClick={(e) => {
-                        navigate('/createComic');
-                    }} style={{ background:"lightblue", color: '', marginTop: '15px', width: '120px' }}
-                    >Add A New Comic</Button>
-                    <div className="cards-column">
-                        {comics?.map((comics) => (
-                            <div style={{ background: '', display: 'flex' }}>
-                                <Comics key={comics.id} comic={comics} />
-                                <Button onClick={(e) => {
-                                    handleDeleteClick(comics.id);
-                                }} style={{ background: 'lightcoral', width: '55px', height: '20px', margin: '5px' }}>Delete</Button>
-                                <Button onClick={(e) => {
-                                    handleEditClick(comics.id);
-                                }} style={{ variant: 'outline-success', width: '55px', height: '20px', margin: '5px' }}>Edit</Button>
-                            </div>
-                        ))}
+        <div className="container" style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className="backgroundImage" style={{ backgroundImage: `url(https://s3.amazonaws.com/comicgeeks/comics/covers/large-3396860.jpg?1669371019)`, opacity: "" }}>
+                <h1 style={{ color: 'white', marginTop: '20px' }}>Comics DB</h1>
+                <button onClick={(e) => {
+                    navigate('/createComic');
+                }} style={{ background: 'lightgreen', color: 'green', marginTop: '15px', width: '120px' }}
+                >Add A New Comic</button>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="cards-column">
+                            {comics?.map((comics) => (
+                                <div style={{ display: 'flex' }}>
+                                    <Comics key={comics.id} comic={comics} />
+                                    <button onClick={(e) => {
+                                        handleDeleteClick(comics.id);
+                                    }} style={{ background: 'lightcoral', width: '55px', height: '20px', margin: '5px' }}>Delete</button>
+                                    <button onClick={(e) => {
+                                        handleEditClick(comics.id);
+                                    }} style={{ background: 'skyblue', width: '55px', height: '20px', margin: '5px' }}>Edit</button>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div></>
+            </div>
+        </div>
     );
 };
 

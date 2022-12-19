@@ -42,7 +42,7 @@ const ComicsEdit = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', letterSpacing: '.5px', alignItems: 'center', margin: '45px', height: '30px', width: '500px', justifyContent: 'space-between' }}>
-            <h2 style={{ marginBottom: '45px' }}>Edit Comic</h2>
+            <h2 style={{ color: 'darkblue', marginBottom: '45px' }}>Edit Comic</h2>
             <div style={{ background: "lightgray", display: 'flex' }}>
                 <fieldset>
                     <input
@@ -112,12 +112,12 @@ const ComicsEdit = () => {
                         }
                     />
                 </fieldset>
-                <Button style={{ variant: "outline-success", marginRight: '10px' }} onClick={(e) => {
+                <button style={{ background: 'lightgreen', color:'green', marginRight: '10px' }} onClick={(e) => {
                     Edit()
-                }}>Save</Button>
-                <Button variant= "outline-warning" onClick={(e) => {
+                }}>Save</button>
+                <button style={{ background: 'yellow', color:'goldenrod' }} onClick={(e) => {
                     Cancel()
-                }}>Cancel</Button>
+                }}>Cancel</button>
             </div>
         </div>
     )

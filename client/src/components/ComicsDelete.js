@@ -34,15 +34,15 @@ const ComicsDelete = () => {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', letterSpacing: '.5px', alignItems: 'center', margin: '45px', height: '30px', width: '500px', justifyContent: 'space-between' }}>
-            <h2 style={{ marginBottom: '45px' }}>Are you sure you want to delete this comic book?</h2>
+            <h2 style={{ color: 'darkblue', marginBottom: '45px' }}>Are you sure you want to delete this comic book?</h2>
             <div style={{ display: 'flex' }}>
                 <h3 style={{ marginRight: '30px' }}>{chosenComic.title} #{chosenComic.issueNumber}</h3>
-                <Button style={{ marginRight: '10px' }} onClick={(c) => {
+                <button style={{ color: 'red', background: 'lightcoral' , marginRight: '10px' }} onClick={(c) => {
                     Delete()
-                }}>Delete</Button>
-                <Button onClick={(c) => {
+                }}>Delete</button>
+                <button style={{color: 'blue' , background: 'lightblue'}} onClick={(c) => {
                     Cancel()
-                }}>Cancel</Button>
+                }}>Cancel</button>
             </div>
         </div>
     )

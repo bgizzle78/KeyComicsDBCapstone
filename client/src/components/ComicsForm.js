@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "reactstrap";
 import { getAllComics, addComics } from "../modules/ComicsManager";
 
 
@@ -10,7 +9,6 @@ export const ComicsForm = () => {
         initial state object
     */
     const [comic, update] = useState({
-        // UserProfileId: "",
         Title: "",
         IssueNumber: "",
         CoverArtist: "",
@@ -27,16 +25,11 @@ export const ComicsForm = () => {
 
     const navigate = useNavigate()
 
-    // const localUser = localStorage.getItem("userProfile")
-    // const userObject = JSON.parse(localUser)
-
-
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
         // TODO: Create the object to be saved to the API
         const newComic = {
-            // UserProfileId: userObject.id,
             Title: comic.Title,
             IssueNumber: comic.IssueNumber,
             CoverArtist: comic.CoverArtist,
@@ -58,7 +51,7 @@ export const ComicsForm = () => {
 
     return (
         <form className="comicForm">
-            <h1 className="comicForm__Title">Add New Comic</h1>
+            <h1 className="comicForm__Title" style={{ color: 'darkblue' }}>Add New Comic</h1>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="Title">Title:</label>
@@ -66,7 +59,7 @@ export const ComicsForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Comic title"
+                        placeholder="Comic Title"
                         value={comic.Title}
                         onChange={(changeEvent) => {
                             const copy = { ...comic }
@@ -152,12 +145,11 @@ export const ComicsForm = () => {
                         }} />
                 </div>
             </fieldset>
-            <Button onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }} className="btn btn-primary">
-                Save New Comic
-            </Button>
-            <Button onClick={(e) => {
+            <button style={{ background: 'skyblue', color: 'blue', marginRight: '10px' }} onClick={(clickEvent) => { handleSaveButtonClick(clickEvent) }} className="btn btn-primary">
+                Save New Comic</button>
+            <button style={{ background: 'lightcoral', color: 'red' }} onClick={(e) => {
                 Cancel()
-            }}>Cancel</Button>
+            }}>Cancel</button>
         </form>
     )
 }

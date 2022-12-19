@@ -1,8 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
-
-namespace Key_Comic_DB_Capstone.Models
+﻿namespace Key_Comic_DB_Capstone.Models
 {
     public class Comics
     {

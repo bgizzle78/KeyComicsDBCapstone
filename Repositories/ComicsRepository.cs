@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Key_Comic_DB_Capstone.Models;
 using Key_Comic_DB_Capstone.Utils;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace Key_Comic_DB_Capstone.Repositories
@@ -25,9 +22,9 @@ namespace Key_Comic_DB_Capstone.Repositories
                     cmd.CommandText = @"
                           SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
                             FROM Comics
-                            ORDER BY Title";
+                            ORDER BY Title, IssueNumber ASC, ComicReleased ASC";
 
-                    var reader = cmd.ExecuteReader();
+                    var reader = cmd.ExecuteReader();   
 
                     var comics = new List<Comics>();
                     while (reader.Read())
