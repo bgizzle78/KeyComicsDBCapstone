@@ -26,8 +26,8 @@ const ComicList = () => {
 
     return (
         <div className="container" style={{ display: 'flex', flexDirection: 'column' }}>
-            <div className="backgroundImage" style={{ backgroundImage: `url(https://s3.amazonaws.com/comicgeeks/comics/covers/large-3396860.jpg?1669371019)`, opacity: "" }}>
-                <h1 style={{ color: 'white', marginTop: '20px' }}>Comics DB</h1>
+            <div className="backgroundImage" style={{ backgroundImage: `url(https://s3.amazonaws.com/comicgeeks/comics/covers/large-7057425.jpg?1669371019)`, opacity: "" }}>
+                <h1 style={{ color: 'red', marginTop: '20px' }}>Comics DB</h1>
                 <button onClick={(e) => {
                     navigate('/createComic');
                 }} style={{ background: 'lightgreen', color: 'green', marginTop: '15px', width: '120px' }}

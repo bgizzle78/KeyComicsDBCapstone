@@ -13,7 +13,7 @@ const SearchList = () => {
 
     return (
         <div className="container" style={{ display: 'flex', flexDirection: 'column' }}>
-            <div className="row justify-content-center" style={{ backgroundImage: `url(https://s3.amazonaws.com/comicgeeks/comics/covers/large-5844153.jpg?1669371019)` }}>
+            <div className="row justify-content-center" style={{ backgroundImage: `url(https://s3.amazonaws.com/comicgeeks/comics/covers/large-7057425.jpg?1669371019)` }}>
                 <h1 style={{ color: 'white', marginTop: '20px' }}>Search Comics</h1>
                 <section className="row g-3">
                     <div>
