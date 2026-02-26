@@ -1,4 +1,4 @@
-🦸‍♂️ KeyComicsDBCapstone
+# 🦸‍♂️ KeyComicsDBCapstone
 
 ![.NET](https://img.shields.io/badge/.NET-ASP.NET_Core-purple)
 ![C#](https://img.shields.io/badge/C%23-Backend-blue)
@@ -10,7 +10,7 @@ A full-stack web application built to help comic collectors track and manage key
 
 Whether you're hunting first appearances, major story arcs, or investment-worthy issues — this app keeps everything organized in one place. 📖✨
 
-🚀 Overview
+## 🚀 Overview
 
 KeyComicsDB is a comic book tracking platform that allows users to:
 
@@ -48,7 +48,7 @@ This project was built as a full-stack capstone to demonstrate backend architect
 - Visual Studio
 - Node.js
 
-🔹 Project Structure
+## Project Structure
 
 Controllers/ – API endpoints
 
@@ -64,7 +64,7 @@ Startup.cs – App configuration
 
 Program.cs – Entry point
 
-📊 Features
+## 📊 Features
 
 Full CRUD functionality (Create, Read, Update, Delete)
 
@@ -76,7 +76,7 @@ Client-server communication via REST API
 
 Clean project organization
 
-🛠️ How to Run the Project
+### 🛠️ How to Run the Project
 1️⃣ Clone the Repository
 git clone https://github.com/bgizzle78/KeyComicsDBCapstone.git
 cd KeyComicsDBCapstone
@@ -97,7 +97,7 @@ dotnet run
 
 Navigate to the client folder and start the frontend according to how it was configured (likely via a dev server or static hosting).
 
-🧠 What This Project Demonstrates
+## 🧠 What This Project Demonstrates
 
 Understanding of RESTful API design
 
@@ -123,11 +123,11 @@ Full-stack development workflow
 
 📱 Responsive UI enhancements
 
-👨‍💻 Author
+## 👨‍💻 Author
 
-Brandon Gray
+**Brandon Gray**
 Full Stack Developer
 
-🎯 Project Purpose
+## 🎯 Project Purpose
 
 This project was created as a full-stack capstone to demonstrate the ability to design, build, and connect a complete web application from backend database to frontend user interface.
