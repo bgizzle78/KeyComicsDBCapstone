@@ -1,6 +1,4 @@
-using System;
-
-namespace Key_Comic_DB_Capstone
+namespace KeyComicsDBCapstone
 {
     public class WeatherForecast
     {
@@ -10,6 +8,6 @@ namespace Key_Comic_DB_Capstone
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
-        public string Summary { get; set; }
+        public string? Summary { get; set; }
     }
 }

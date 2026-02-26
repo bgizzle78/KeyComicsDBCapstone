@@ -1,5 +1,5 @@
-﻿using Key_Comic_DB_Capstone.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Key_Comic_DB_Capstone.Models;
 
 namespace Key_Comic_DB_Capstone.Repositories
 {

@@ -1,7 +1,7 @@
-﻿using Key_Comic_DB_Capstone.Models;
+﻿using System.Collections.Generic;
+using Key_Comic_DB_Capstone.Models;
 using Key_Comic_DB_Capstone.Utils;
 using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
 
 namespace Key_Comic_DB_Capstone.Repositories
 {

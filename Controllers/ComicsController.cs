@@ -2,7 +2,7 @@
 using Key_Comic_DB_Capstone.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Key_Comic_DB_Capstone.Controllers
+namespace KeyComicDBCapstone.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -10,11 +10,11 @@ namespace Key_Comic_DB_Capstone.Controllers
     public class ComicsController : ControllerBase
     {
         private readonly IComicsRepository _comicsRepository;
-        public ComicsController (IComicsRepository comicsRepository)
+        public ComicsController(IComicsRepository comicsRepository)
         {
             _comicsRepository = comicsRepository;
         }
-    
+
         // GET: api/<ComicsController>
         [HttpGet]
         public IActionResult Get()

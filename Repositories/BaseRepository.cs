@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace Key_Comic_DB_Capstone.Repositories
 {

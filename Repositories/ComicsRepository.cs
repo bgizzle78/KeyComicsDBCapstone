@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Microsoft.Extensions.Configuration;
+using System.Data.SqlClient;
 using Key_Comic_DB_Capstone.Models;
 using Key_Comic_DB_Capstone.Utils;
-using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace Key_Comic_DB_Capstone.Repositories
 {
@@ -10,7 +10,7 @@ namespace Key_Comic_DB_Capstone.Repositories
     {
         public ComicsRepository(IConfiguration configuration) : base(configuration) { }
 
-       
+
 
         public List<Comics> GetAllComics()
         {
@@ -24,7 +24,7 @@ namespace Key_Comic_DB_Capstone.Repositories
                             FROM Comics
                             ORDER BY Title, IssueNumber ASC, ComicReleased ASC";
 
-                    var reader = cmd.ExecuteReader();   
+                    var reader = cmd.ExecuteReader();
 
                     var comics = new List<Comics>();
                     while (reader.Read())
@@ -84,30 +84,31 @@ namespace Key_Comic_DB_Capstone.Repositories
                 }
             }
         }
-    
-            public void Add(Comics comics)
+
+        public void Add(Comics comics)
+        {
+            using (var conn = Connection)
             {
-                using (var conn = Connection)
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
                 {
-                    conn.Open();
-                    using (var cmd = conn.CreateCommand())
-                    {
-                        cmd.CommandText = @"
+                    cmd.CommandText = @"
                         INSERT INTO Comics (Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased)
                         OUTPUT INSERTED.ID
                         VALUES (@title, @issueNumber, @coverArtist, @storyWriter, @coverImage, @comicReleased)";
 
-                        cmd.Parameters.AddWithValue("@title", comics.Title);
-                        cmd.Parameters.AddWithValue("@issueNumber", comics.IssueNumber);
-                        cmd.Parameters.AddWithValue("@coverArtist", comics.CoverArtist);
-                        cmd.Parameters.AddWithValue("@storyWriter", comics.StoryWriter);
-                        cmd.Parameters.AddWithValue("@coverImage", comics.CoverImage);
-                        cmd.Parameters.AddWithValue("@comicReleased", comics.ComicReleased);
+                    cmd.Parameters.AddWithValue("@title", comics.Title);
+                    cmd.Parameters.AddWithValue("@issueNumber", comics.IssueNumber);
+                    cmd.Parameters.AddWithValue("@coverArtist", comics.CoverArtist);
+                    cmd.Parameters.AddWithValue("@storyWriter", comics.StoryWriter);
+                    cmd.Parameters.AddWithValue("@coverImage", comics.CoverImage);
+                    cmd.Parameters.AddWithValue("@comicReleased", comics.ComicReleased);
 
-                        comics.Id = (int)cmd.ExecuteScalar();
-                    };
+                    comics.Id = (int)cmd.ExecuteScalar();
                 }
+                ;
             }
+        }
         public void Delete(int id)
         {
             using (SqlConnection conn = Connection)
@@ -123,7 +124,8 @@ namespace Key_Comic_DB_Capstone.Repositories
                     cmd.Parameters.AddWithValue("@id", id);
 
                     cmd.ExecuteNonQuery();
-                };
+                }
+                ;
             }
         }
         public void Update(Comics comics)
@@ -167,7 +169,7 @@ namespace Key_Comic_DB_Capstone.Repositories
                     var sql = @"
                             SELECT Id, Title, IssueNumber, CoverArtist, StoryWriter, CoverImage, ComicReleased
                             FROM Comics
-                            WHERE Title LIKE @Criterion";                    
+                            WHERE Title LIKE @Criterion";
 
                     cmd.CommandText = sql;
                     DbUtils.AddParameter(cmd, "@Criterion", $"%{criterion}%");
@@ -196,4 +198,3 @@ namespace Key_Comic_DB_Capstone.Repositories
         }
     }
 }
-
