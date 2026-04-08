@@ -1,10 +1,10 @@
 # 🦸‍♂️ KeyComicsDBCapstone
 
-![.NET](https://img.shields.io/badge/.NET-ASP.NET_Core-purple)
-![C#](https://img.shields.io/badge/C%23-Backend-blue)
-![React](https://img.shields.io/badge/React-Frontend-61DAFB?logo=react&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
-![SQL](https://img.shields.io/badge/SQL-Database-green)
+![.NET](https://img.shields.io/badge/.NET-ASP.NET_Core-512BD4?style=flat&logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-Backend-239120?style=flat&logo=c-sharp&logoColor=white)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=flat&logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![MSSQL](https://img.shields.io/badge/MSSQL_Server-Database-CC2927?style=flat&logo=microsoft-sql-server&logoColor=white)
 
 A full-stack web application built to help comic collectors track and manage key comic books in their collection.
 
@@ -30,7 +30,7 @@ KeyComicsDB is a comic book tracking platform that allows users to:
 
 This project was built as a full-stack capstone to demonstrate backend architecture, frontend integration, and database management.
 
-## 🏗️ Tech Stack 
+## 🛠️ Tech Stack 
 
 ### Backend
 - C#
@@ -46,13 +46,13 @@ This project was built as a full-stack capstone to demonstrate backend architect
 - REST API Consumption
 - CSS
 
-### 🛠️ Development Tools
+### Development Tools
 - Git
 - GitHub
 - Visual Studio
 - Node.js
 
-## Project Structure
+## 🏗️ Project Structure
 
 Controllers/ – API endpoints
 
@@ -81,9 +81,13 @@ Client-server communication via REST API
 Clean project organization
 
 ### 🛠️ How to Run the Project
+
 1️⃣ Clone the Repository
+
 git clone https://github.com/bgizzle78/KeyComicsDBCapstone.git
+
 cd KeyComicsDBCapstone
+
 2️⃣ Set Up the Database
 
 Update your appsettings.json connection string
@@ -94,12 +98,11 @@ Ensure your SQL Server is running
 
 3️⃣ Run the Backend
 
-Open in Visual Studio and run:
+Open in Visual Studio 2022 and run: dotnet run
 
-dotnet run
 4️⃣ Run the Frontend
 
-Navigate to the client folder and start the frontend according to how it was configured (likely via a dev server or static hosting).
+Navigate to the client folder and start the frontend according to how it was configured.
 
 ## 🧠 What This Project Demonstrates
 
