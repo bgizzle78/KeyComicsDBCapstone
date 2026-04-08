@@ -10,6 +10,10 @@ A full-stack web application built to help comic collectors track and manage key
 
 Whether you're hunting first appearances, major story arcs, or investment-worthy issues — this app keeps everything organized in one place. 📖✨
 
+## 🎯 Project Purpose
+
+This project was created as a full-stack capstone to demonstrate the ability to design, build, and connect a complete web application from backend database to frontend user interface.
+
 ## 🚀 Overview
 
 KeyComicsDB is a comic book tracking platform that allows users to:
@@ -111,7 +115,7 @@ Version control with Git
 
 Full-stack development workflow
 
-📌 Future Improvements
+## 📌 Future Improvements
 
 🔐 User authentication & accounts
 
@@ -127,7 +131,3 @@ Full-stack development workflow
 
 **Brandon Gray**
 Full Stack Developer
-
-## 🎯 Project Purpose
-
-This project was created as a full-stack capstone to demonstrate the ability to design, build, and connect a complete web application from backend database to frontend user interface.
