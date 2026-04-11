@@ -1,10 +1,12 @@
 # 🦸‍♂️ KeyComicsDBCapstone
 
-![.NET](https://img.shields.io/badge/.NET-ASP.NET_Core-512BD4?style=flat&logo=dotnet&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-Backend-239120?style=flat&logo=c-sharp&logoColor=white)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=flat&logo=react&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![MSSQL](https://img.shields.io/badge/MSSQL_Server-Database-CC2927?style=flat&logo=microsoft-sql-server&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-ASP.NET_Core-512BD4?style=flat&logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-Backend-239120?style=flat&logo=c-sharp&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Version_Control-orange?style=flat&logo=git&logoColor=orange)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)
 
 A full-stack web application built to help comic collectors track and manage key comic books in their collection.
 
